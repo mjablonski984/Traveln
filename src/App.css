@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Global Styles */
+:root {
+  --primary-color: #5d9599;
+  --secondary-color: #54aab0;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+  min-height: 100%;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h2,
+h3 {
+  color: var(--secondary-color);
+  margin: 0.5rem auto 0.3rem;
+}
+
+/* Main comtainers */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0.5rem 2rem 2rem;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Nav and footer */
+
+.bar {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  width: 100%;
+  padding: 0.7rem 2rem;
+  opacity: 0.9;
+}
+
+/* Navbar*/
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav a {
+  color: #fff;
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+}
+
+.nav a:hover {
+  color: var(--light-color);
+}
+
+/* Footer */
+.footer {
+  margin: auto 0 0;
+  min-height: 2rem;
+}
+
+.footer p {
+  text-align: center;
+  padding: 0.45rem;
+}
+
+/* Search */
+.search-container {
+  display: flex;
+}
+
+.search-form {
+  width: 60%;
+  padding: 1rem;
+  text-align: center;
+}
+
+.search-form .search-options {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.search-options li {
+  cursor: pointer;
+  padding: 0.45rem;
+}
+
+.search-options .selected {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Inputs */
+.search-form input {
+  margin: 1rem auto;
+  /* font: inherit; */
+}
+
+.search-form input[type='text'] {
+  display: block;
+  width: 90%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+.search-form input[type='submit'],
+.search-form input[type='button'] {
+  font: inherit;
+}
+
+/* Cards */
+
+.weather-card {
+  width: 40%;
+  height: auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.card {
+  padding: 1rem;
+  border: #ccc 1px dotted;
+  margin: 0.7rem auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 330px;
+  height: 380px;
+  text-align: center;
+}
+
+.card a {
+  margin: 1rem auto;
+}
+
+/* Place */
+
+.place-container {
+  display: flex;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.place-section {
+  width: 50%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.place-section h2 {
+  margin: 1rem auto 1rem;
+}
+/* Map - class must be named leaflet-container to display map */
+.leaflet-container {
+  width: 400px;
+  height: 400px;
+  margin: 3rem auto 0;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: opacity 0.2s ease-in;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  color: var(--primary-color);
+}
+
+.btn-form {
+  width: 45%;
+  margin: 0 auto;
+}
+
+/* Color classes */
+
+.primary {
+  background: var(--primary-color);
+  color: var(--light-color);
+}
+
+.secondary {
+  background: var(--primary-color);
+  color: var(--light-color);
+}
+
+.light {
+  background: var(--light-color);
+  color: var(--dark-color);
+}
+
+.dark {
+  background: var(--dark-color);
+  color: var(--light-color);
+}
+
+/* Mobile Styles */
+@media (max-width: 992px) {
+  .nav {
+    display: block;
+    text-align: center;
+  }
+
+  .nav ul {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .search-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-form {
+    width: 100%;
+  }
+  .weather-card {
+    width: 100%;
+  }
+
+  .card {
+    flex: 1 1 330px;
+  }
+
+  .place-container {
+    flex-direction: column;
+  }
+
+  .place-section {
+    width: 100%;
+  }
+}
