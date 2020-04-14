@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const PlaceItem = (props) => {
   const place = props.place.venue;
@@ -23,6 +24,10 @@ const PlaceItem = (props) => {
       </div>
     </div>
   );
+};
+
+PlaceItem.propTypes = {
+  place: PropTypes.object.isRequired
 };
 
 export default PlaceItem;

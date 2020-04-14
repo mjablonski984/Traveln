@@ -1,4 +1,4 @@
-import { GET_WEATHER, SET_LOADING, CLEAR_WEATHER } from '../types';
+import { GET_WEATHER, SET_LOADING, STOP_LOADING, CLEAR_WEATHER } from '../types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -13,6 +13,12 @@ export default (state, action) => {
       return {
         ...state,
         loading: true
+      };
+
+    case STOP_LOADING:
+      return {
+        ...state,
+        loading: false
       };
 
     case CLEAR_WEATHER:

@@ -2,7 +2,7 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #5d9599;
+  --primary-color: #69a9ad;
   --secondary-color: #54aab0;
   --dark-color: #333333;
   --light-color: #f4f4f4;
@@ -63,6 +63,9 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  margin: 2rem auto;
+  min-height: 12rem;
 }
 
 /* Nav and footer */
@@ -138,10 +141,8 @@ h3 {
   font-weight: 600;
 }
 
-/* Inputs */
 .search-form input {
   margin: 1rem auto;
-  /* font: inherit; */
 }
 
 .search-form input[type='text'] {
@@ -149,7 +150,7 @@ h3 {
   width: 90%;
   padding: 0.4rem;
   font-size: 1.2rem;
-  border: 1px solid #ccc;
+  border: 1px solid #d7d6d2;
 }
 
 .search-form input[type='submit'],
@@ -172,18 +173,19 @@ h3 {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+  padding: 1rem;
 }
 
 .card {
   padding: 1rem;
-  border: #ccc 1px dotted;
+  border: #c4c4bc 1px dotted;
   margin: 0.7rem auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 0 1 330px;
-  height: 380px;
+  height: 25rem;
   text-align: center;
 }
 
@@ -259,6 +261,45 @@ h3 {
   color: var(--light-color);
 }
 
+/* Loader */
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.loader > span {
+  background: var(--secondary-color);
+  border-radius: 50%;
+  margin: 5rem 0.5rem;
+  animation: bouncingLoader 0.6s infinite alternate;
+}
+
+.loader > span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader > span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bouncingLoader {
+  from {
+    width: 0.1rem;
+    height: 0.1rem;
+    opacity: 1;
+    transform: translate3d(0);
+  }
+  to {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.1;
+    transform: translate3d(0, -1rem, 0);
+  }
+}
+
 /* Mobile Styles */
 @media (max-width: 992px) {
   .nav {
@@ -293,5 +334,33 @@ h3 {
 
   .place-section {
     width: 100%;
+  }
+
+  .leaflet-container {
+    width: 350px;
+    height: 350px;
+    margin: 1rem auto 0;
+  }
+}
+
+@media (max-width: 756px) {
+  .search-form input[type='text'] {
+    width: 90%;
+  }
+
+  .btn-form {
+    width: 50%;
+  }
+
+  .card-list {
+    padding: 0;
+  }
+
+  .place-section {
+    padding: 0.75rem;
+  }
+  .leaflet-container {
+    width: 300px;
+    height: 300px;
   }
 }

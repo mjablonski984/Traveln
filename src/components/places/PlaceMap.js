@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const PlaceMap = (props) => {
-  console.log(props);
   const [coords, setCoords] = useState({
     lat: 51.5098,
     lng: -0.118
@@ -25,12 +24,18 @@ const PlaceMap = (props) => {
         />
         <Marker position={[coords.lat, coords.lng]}>
           <Popup>
-            <p>{props.name}</p>
+            <h3>{props.name}</h3>
           </Popup>
         </Marker>
       </Map>
     </div>
   );
+};
+
+PlaceMap.propTypes = {
+  lat: PropTypes.number.isRequired,
+  lng: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired
 };
 
 export default PlaceMap;

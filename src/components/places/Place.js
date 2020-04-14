@@ -18,7 +18,6 @@ const PlaceDetail = ({ match }) => {
   if (place) {
     const { name, location, categories } = place;
 
-    console.log(place);
     return (
       <div className="place-container">
         <div className="place-section">
@@ -39,8 +38,8 @@ const PlaceDetail = ({ match }) => {
           <p>{location && location.state}</p>
           <p>{location && location.formattedAddress[2]}</p>
           <h3>Coordinates:</h3>
-          <p>{location && 'Latitude ' + location.lat.toFixed(4)}</p>
-          <p>{location && 'Longitude ' + location.lng.toFixed(4)}</p>
+          <p>{location && 'Latitude: ' + location.lat.toFixed(4)}</p>
+          <p>{location && 'Longitude: ' + location.lng.toFixed(4)}</p>
         </div>
         <div className="place-section">
           {location ? (

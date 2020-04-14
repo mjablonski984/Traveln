@@ -22,6 +22,7 @@ const Search = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
     if (text === '') {
       return;
     } else {
