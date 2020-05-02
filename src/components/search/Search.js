@@ -18,9 +18,9 @@ const Search = () => {
     Trending: 'trending'
   };
 
-  const onChange = (e) => setText(e.target.value);
+  const onChange = e => setText(e.target.value);
 
-  const onSubmit = (e) => {
+  const onSubmit = e => {
     e.preventDefault();
 
     if (text === '') {
@@ -28,17 +28,17 @@ const Search = () => {
     } else {
       placesContext.searchPlaces(text, section);
       weatherContext.getWeather(text);
-      setText('');
     }
   };
 
   const clear = () => {
     placesContext.clearPlaces();
     weatherContext.clearWeather();
+    setText('');
   };
 
   const renderSections = () => {
-    return Object.keys(selectSections).map((prop) => {
+    return Object.keys(selectSections).map(prop => {
       return (
         <li
           key={selectSections[prop]}
@@ -54,7 +54,14 @@ const Search = () => {
     <form className="search-form" onSubmit={onSubmit}>
       <ul className="search-options">{renderSections()}</ul>
 
-      <input type="text" name="text" value={text} onChange={onChange} placeholder="Search..." />
+      <input
+        type="text"
+        name="text"
+        value={text}
+        onChange={onChange}
+        onFocus={() => setText('')}
+        placeholder="Search..."
+      />
 
       <input type="submit" value="Search" className="btn dark btn-form" />
 

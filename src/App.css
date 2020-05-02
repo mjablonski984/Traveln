@@ -42,7 +42,7 @@ h3 {
   margin: 0.5rem auto 0.3rem;
 }
 
-/* Main comtainers */
+/* Main containers */
 
 .App {
   min-height: 100vh;
@@ -68,7 +68,7 @@ h3 {
   min-height: 12rem;
 }
 
-/* Nav and footer */
+/* Nav and footer container */
 
 .bar {
   background-color: var(--primary-color);
@@ -99,7 +99,7 @@ h3 {
 }
 
 .nav a:hover {
-  color: var(--light-color);
+  color: var(--dark-color);
 }
 
 /* Footer */

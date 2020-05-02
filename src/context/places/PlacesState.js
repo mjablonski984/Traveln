@@ -4,7 +4,7 @@ import PlacesReducer from './placesReducer';
 import PlacesContext from './placesContext';
 import { SEARCH_PLACES, GET_PLACE, CLEAR_PLACES, SET_LOADING, STOP_LOADING } from '../types';
 
-const PlacesState = (props) => {
+const PlacesState = props => {
   const initialState = {
     places: [],
     place: {},
@@ -23,7 +23,7 @@ const PlacesState = (props) => {
       const url = 'https://api.foursquare.com/v2/venues/explore?near=';
 
       const res = await axios.get(
-        `${url}${place}&limit=18&section=${section}&client_id=${clientId}&client_secret=${clientSecret}&v=20180101`
+        `${url}${place}&limit=24&section=${section}&client_id=${clientId}&client_secret=${clientSecret}&v=20180101`
       );
 
       // console.log(res.data.response.groups[0].items);
